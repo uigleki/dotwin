@@ -1,5 +1,6 @@
 # 仓库地址
-$url = "https://gitlab.com/glek/scripts/raw/main/win"
+$cfg_url = "https://gitlab.com/glek/dotwin.git"
+$cfg_dir = "$HOME/dotwin"
 
 # 提示
 Write-Output "记得关闭 bitlocker 和安全启动，禁用快速启动，关闭时间同步，硬件时钟设置为 UTC。"
@@ -12,17 +13,14 @@ winget install Mozilla.Firefox
 winget install CrowTranslate.CrowTranslate
 winget install Klocman.BulkCrapUninstaller
 
+# git 仓库
+git clone --depth=1 "$cfg_url" "$cfg_dir"
+
 # 小鹤双拼 键位
-Invoke-WebRequest "$url/xhup.reg" -OutFile "xhup.reg"
-reg import "xhup.reg"
-Remove-Item "xhup.reg"
+reg import "$cfg_dir/reg/xhup.reg"
 
 # UTC 时间 (需要管理员权限)
 Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1
 
-# 键盘映射
-$dest = "$env:LOCALAPPDATA/Microsoft/PowerToys"
-mkdir -fp "$dest/Keyboard Manager"
-Invoke-WebRequest "$url/powertoys/settings.json" -OutFile "$dest/settings.json"
-Invoke-WebRequest "$url/powertoys/keyboard/settings.json" -OutFile "$dest/Keyboard Manager/settings.json"
-Invoke-WebRequest "$url/powertoys/keyboard/default.json" -OutFile "$dest/Keyboard Manager/default.json"
+# 配置文件
+Copy-Item -r "$cfg_dir/AppData" $HOME
