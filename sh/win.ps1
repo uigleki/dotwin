@@ -22,3 +22,6 @@ git clone --depth=1 "$cfg_url" "$cfg_dir"
 
 # 小鹤双拼 键位
 reg import "$cfg_dir/reg/xhup.reg"
+
+# 设置 WSL
+wsl --set-default-version 1
