@@ -12,15 +12,13 @@ winget install Microsoft.PowerToys
 winget install Mozilla.Firefox
 winget install CrowTranslate.CrowTranslate
 winget install Klocman.BulkCrapUninstaller
+winget install Dropbox.Dropbox
+winget install Valve.Steam
+winget install WeMod.WeMod
+winget install Google.Chrome
 
 # git 仓库
 git clone --depth=1 "$cfg_url" "$cfg_dir"
 
 # 小鹤双拼 键位
 reg import "$cfg_dir/reg/xhup.reg"
-
-# UTC 时间 (需要管理员权限)
-Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1
-
-# 配置文件
-Copy-Item -r "$cfg_dir/AppData" $HOME
