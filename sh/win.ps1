@@ -9,9 +9,10 @@ winget install Git.Git
 winget install 7zip.7zip
 winget install Microsoft.PowerToys
 winget install Mozilla.Firefox
+winget install Cryptomator.Cryptomator
+winget install Dropbox.Dropbox
 winget install CrowTranslate.CrowTranslate
 winget install Klocman.BulkCrapUninstaller
-winget install Dropbox.Dropbox
 winget install Valve.Steam
 winget install WeMod.WeMod
 winget install Google.Chrome
