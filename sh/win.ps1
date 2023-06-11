@@ -1,5 +1,5 @@
 # 小鹤双拼地址
-$xhup_url = "https://gitlab.com/uigleki/dotwin/raw/main/reg/xhup.reg"
+$flypy_url = "https://gitlab.com/uigleki/dotwin/raw/main/reg/flypy.reg"
 
 # 提示
 Write-Output "记得关闭 bitlocker 和安全启动，禁用快速启动，关闭时间同步，硬件时钟设置为 UTC。"
@@ -18,6 +18,6 @@ winget install WeMod.WeMod
 winget install Google.Chrome
 
 # 小鹤双拼 键位
-Invoke-WebRequest -Uri $xhup_url -OutFile xhup.reg
-reg import xhup.reg
-del xhup.reg
+Invoke-WebRequest -Uri $flypy_url -OutFile flypy.reg
+reg import flypy.reg
+del flypy.reg
