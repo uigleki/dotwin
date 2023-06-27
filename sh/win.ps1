@@ -2,7 +2,7 @@
 $flypy_url = "https://gitlab.com/uigleki/dotwin/raw/main/reg/flypy.reg"
 
 # 提示
-Write-Output "记得关闭 bitlocker 和安全启动，禁用快速启动，关闭时间同步，硬件时钟设置为 UTC。"
+Write-Output "装双系统时，记得关闭 bitlocker 和安全启动，禁用快速启动，关闭时间同步，硬件时钟设置为 UTC。"
 
 # 下载常用软件
 winget install 7zip.7zip
